@@ -1,11 +1,18 @@
 # Assessment: Use Case Oriented Project
 
+I had to create an automated deployment and configuration of 3 microservices:
+
+ - front-end service
+ - product catalog service
+ - order processing service
+
+All the work had to be version controlled using git, the images for the services were to be made using docker and deployed using kubernetes.
 
 ## Tasks and Deliverables
 
 ### Task 1: Git Repository Setup
 
-I created a git repo with 3 branches 
+I created a git repo with 3 branches: 
  - development
  - testing 
  - production
@@ -33,14 +40,18 @@ And the images were available on Dockerhub
 
 ### Task 3: Kubernetes Deployment
 
-For the Kubernetes Section I created a deployment file that creates a deployment and service for each microservice
+For the Kubernetes Section I created a deployment file that creates a deployment, service and replicasets for each microservice.
+
 
 ![alt text](<img/Screenshot from 2024-08-02 17-39-10.png>)
 
 **Final Output**
 
-![alt text](<img/Screenshot from 2024-08-02 17-17-49.png>) 
+**Front-End Service**
+![alt text](<img/Screenshot from 2024-08-02 17-49-14.png>) 
 
-![alt text](<img/Screenshot from 2024-08-02 17-18-30.png>) 
+**Product-Catalog Service**
+![alt text](<img/Screenshot from 2024-08-02 17-49-29.png>) 
 
-![alt text](<img/Screenshot from 2024-08-02 17-18-35.png>)
+**Order-Processing Service**
+![alt text](<img/Screenshot from 2024-08-02 17-49-46.png>)

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: database
-        image: harshpatil02/database:latest
+        image: harshpatil02/order-processing:latest
         ports:
         - containerPort: 5432
         env:
@@ -35,6 +35,6 @@ spec:
     app: database
   ports:
     - protocol: TCP
-      port: 5432
-      targetPort: 5432
+      port: 82
+      targetPort: 80
   type: LoadBalancer

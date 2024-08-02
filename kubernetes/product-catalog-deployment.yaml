@@ -1,20 +1,19 @@
-# kubernetes/backend-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment
+  name: product-catalog-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: backend
+      app: product-catalog
   template:
     metadata:
       labels:
-        app: backend
+        app: product-catalog
     spec:
       containers:
-      - name: backend
+      - name: product-catalog
         image: harshpatil02/product-catalog:latest
         ports:
         - containerPort: 80
@@ -22,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: product-catalog-service
 spec:
   selector:
-    app: backend
+    app: product-catalog
   ports:
     - protocol: TCP
       port: 81

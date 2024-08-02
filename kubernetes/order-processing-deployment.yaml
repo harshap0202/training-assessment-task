@@ -1,38 +1,30 @@
-# kubernetes/database-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: database-deployment
+  name: order-processing-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: database
+      app: order-processing
   template:
     metadata:
       labels:
-        app: database
+        app: order-processing
     spec:
       containers:
-      - name: database
+      - name: order-processing
         image: harshpatil02/order-processing:latest
         ports:
-        - containerPort: 5432
-        env:
-        - name: POSTGRES_USER
-          value: "user"
-        - name: POSTGRES_PASSWORD
-          value: "password"
-        - name: POSTGRES_DB
-          value: "mydatabase"
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: database-service
+  name: order-processing-service
 spec:
   selector:
-    app: database
+    app: order-processing
   ports:
     - protocol: TCP
       port: 82
